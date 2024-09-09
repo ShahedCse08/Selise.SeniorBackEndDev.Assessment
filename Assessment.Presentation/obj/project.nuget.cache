@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "3hAATj2JO72oTbJeqSGivJPKUT4eKFenN9P9wt21okODo1Mt3ltIY1bxekbjc384BTH5jioxQ1T7iE03X+3OSQ==",
+  "success": true,
+  "projectFilePath": "D:\\SeliseRound-1\\Selise.SeniorBackEndDev.Assessment\\Assessment.Presentation\\Assessment.Presentation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DINAR\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\DINAR\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\DINAR\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\DINAR\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\DINAR\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\DINAR\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
