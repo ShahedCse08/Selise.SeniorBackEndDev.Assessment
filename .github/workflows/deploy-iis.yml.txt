@@ -1,0 +1,36 @@
+name: CI/CD to Local IIS
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      # ---------------- Checkout Repo ----------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ---------------- Setup .NET ----------------
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+
+      # ---------------- Build Backend ----------------
+      - name: Build Backend
+        run: |
+          dotnet restore "${{ github.workspace }}\Selise.SeniorBackEndDev.Assessment.sln"
+          dotnet publish "${{ github.workspace }}\Selise.SeniorBackEndDev.Assessment.sln" -c Release -o "${{ github.workspace }}\publish-api"
+
+      # ---------------- Deploy to IIS ----------------
+      - name: Deploy to IIS
+        shell: pwsh
+        run: |
+          # Path to deployment script in repo
+          $deployScript = "${{ github.workspace }}\deploy.ps1"
+
+          # Run deploy.ps1
+          & $deployScript -sourcePath "${{ github.workspace }}\publish-api" -destinationPath "C:\inetpub\wwwroot\MyApp"
