@@ -9,7 +9,7 @@ namespace Assessment.Presentation.Controllers
     public class TimeSlotConflictController : ControllerBase
     {
 
-        [HttpGet("HasConflict")]
+        [HttpGet("HasConflicts")]
         [Produces("application/json")]
         public bool HasConflict()
         {
