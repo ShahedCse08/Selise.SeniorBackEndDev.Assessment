@@ -11,7 +11,7 @@ namespace Assessment.Presentation.Controllers
 
         [HttpGet("HasConflicts")]
         [Produces("application/json")]
-        public bool HasConflict()
+        public bool HasConflicts()
         {
             var isConflicting = false;
             TimeSlot givenSlot = new TimeSlot
