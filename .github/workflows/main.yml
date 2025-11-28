@@ -13,11 +13,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ---------------- Setup .NET ----------------
+      # ---------------- Setup .NET (no admin required) ----------------
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 6.0.x
+          install-dir: ${{ runner.temp }}/dotnet
+
+      - name: Add dotnet to PATH
+        run: echo "${{ runner.temp }}/dotnet" | Out-File -FilePath $env:GITHUB_PATH -Append
 
       # ---------------- Build Backend ----------------
       - name: Build Backend
@@ -29,8 +33,5 @@ jobs:
       - name: Deploy to IIS
         shell: pwsh
         run: |
-          # Path to deployment script in repo
           $deployScript = "${{ github.workspace }}\deploy.ps1"
-
-          # Run deploy.ps1
           & $deployScript -sourcePath "${{ github.workspace }}\publish-api" -destinationPath "C:\inetpub\wwwroot\MyApp"
